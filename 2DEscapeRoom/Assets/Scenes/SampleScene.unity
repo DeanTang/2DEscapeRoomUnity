@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 77557422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947984920}
+        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+        m_MethodName: OnNextArrowClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &77557422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +635,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733092262}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947984920}
+        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+        m_MethodName: OnPreviousArrowClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &733092262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,6 +698,7 @@ GameObject:
   - component: {fileID: 947984918}
   - component: {fileID: 947984917}
   - component: {fileID: 947984916}
+  - component: {fileID: 947984920}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -710,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -764,6 +789,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &947984920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947984915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83401a6dd05a0dc4cba09a7cf2e724a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1717843151
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717843153}
   - component: {fileID: 1717843152}
+  - component: {fileID: 1717843154}
   m_Layer: 0
   m_Name: DisplayImg
   m_TagString: Untagged
@@ -848,3 +886,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717843154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717843151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f603e408f92874fa80b548add467e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
