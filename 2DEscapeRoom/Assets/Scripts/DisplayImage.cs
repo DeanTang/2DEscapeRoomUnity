@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class DisplayImage : MonoBehaviour
 {
+    public enum State
+    {
+        normal, zoomed
+    }
+
+    public State CurrentState;
+
     public int CurrentWall
     {
         get { return currentWall; }
