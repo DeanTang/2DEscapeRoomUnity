@@ -28,7 +28,7 @@ public class ButtonHandler : MonoBehaviour
 
     public void OnClickZoomReturn()
     {
-        GameObject.Find("displayImg").GetComponent<DisplayImage>().CurrentState = DisplayImage.State.normal;
+        GameObject.Find("DisplayImg").GetComponent<DisplayImage>().CurrentState = DisplayImage.State.normal;
         var zoomInObjects = FindObjectsOfType<ZoomInObject>();
         foreach(var zoomInObject in zoomInObjects)
         {
