@@ -10,9 +10,11 @@ public class ZoomInObject : MonoBehaviour, IInteractable
         Camera.main.orthographicSize *= ZoomRatio;
         Camera.main.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, Camera.main.transform.position.z);
 
-        gameObject.layer = 2; // Set ZoomInObject
+        gameObject.layer = 2; // Set ZoomInObject layer to Ignore Raycast
 
         currentDisplay.CurrentState = DisplayImage.State.zoomed;
+
+        ConstrainCamera();
     }
 
     void ConstrainCamera()
@@ -20,6 +22,31 @@ public class ZoomInObject : MonoBehaviour, IInteractable
         var height = Camera.main.orthographicSize;
         var width = height * Camera.main.aspect;
 
-        var cameraBounds = GameObject.Find("cameraBounds");
+        var cameraBounds = GameObject.Find("CameraBounds");
+
+        // TODO: Investigate bounds issue
+        if (Camera.main.transform.position.x + width > cameraBounds.transform.position.x + cameraBounds.GetComponent<BoxCollider2D>().size.x / 2)
+        {
+            Camera.main.transform.position += new Vector3(cameraBounds.transform.position.x + cameraBounds.GetComponent<BoxCollider2D>().size.x/2 -
+                (Camera.main.transform.position.x + width), 0, 0);
+        }
+
+        if (Camera.main.transform.position.x - width > cameraBounds.transform.position.x - cameraBounds.GetComponent<BoxCollider2D>().size.x / 2)
+        {
+            Camera.main.transform.position += new Vector3(cameraBounds.transform.position.x - cameraBounds.GetComponent<BoxCollider2D>().size.x/2 -
+                (Camera.main.transform.position.x - width), 0, 0);
+        }
+
+        if (Camera.main.transform.position.y + height > cameraBounds.transform.position.y + cameraBounds.GetComponent<BoxCollider2D>().size.y / 2)
+        {
+            Camera.main.transform.position += new Vector3(0, cameraBounds.transform.position.y + cameraBounds.GetComponent<BoxCollider2D>().size.y/2 -
+                (Camera.main.transform.position.y + height), 0);
+        }
+
+        if (Camera.main.transform.position.y - height > cameraBounds.transform.position.y - cameraBounds.GetComponent<BoxCollider2D>().size.y / 2)
+        {
+            Camera.main.transform.position += new Vector3(0, cameraBounds.transform.position.y - cameraBounds.GetComponent<BoxCollider2D>().size.y/2 -
+                (Camera.main.transform.position.y - height), 0);
+        }
     }
 }

@@ -9,7 +9,7 @@ public class DisplayImage : MonoBehaviour
         normal, zoomed
     }
 
-    public State CurrentState;
+    public State CurrentState {get; set;}
 
     public int CurrentWall
     {
