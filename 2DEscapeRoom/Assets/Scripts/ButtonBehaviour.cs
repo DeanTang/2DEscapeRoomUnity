@@ -28,7 +28,7 @@ public class ButtonBehaviour : MonoBehaviour
             this.transform.SetSiblingIndex(0);
         }
 
-        if (currentDisplay.CurrentState == DisplayImage.State.zoomed && ThisButtonId == ButtonId.roomChangeButton)
+        if (!(currentDisplay.CurrentState == DisplayImage.State.normal) && ThisButtonId == ButtonId.roomChangeButton)
         {
             GetComponent<Image>().color = new Color(GetComponent<Image>().color.r, GetComponent<Image>().color.g,
                 GetComponent<Image>().color.b, 0);
@@ -39,7 +39,7 @@ public class ButtonBehaviour : MonoBehaviour
 
     void Display()
     {
-        if (currentDisplay.CurrentState == DisplayImage.State.zoomed && ThisButtonId == ButtonId.returnButton)
+        if (!(currentDisplay.CurrentState == DisplayImage.State.normal) && ThisButtonId == ButtonId.returnButton)
         {
             GetComponent<Image>().color = new Color(GetComponent<Image>().color.r, GetComponent<Image>().color.g,
                 GetComponent<Image>().color.b, 1);
